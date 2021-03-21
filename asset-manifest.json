@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/CS426Team31/crimemapping/static/css/main.586feceb.chunk.css",
+    "main.js": "/CS426Team31/crimemapping/static/js/main.1e4fe17c.chunk.js",
+    "main.js.map": "/CS426Team31/crimemapping/static/js/main.1e4fe17c.chunk.js.map",
+    "runtime-main.js": "/CS426Team31/crimemapping/static/js/runtime-main.b57d7c2a.js",
+    "runtime-main.js.map": "/CS426Team31/crimemapping/static/js/runtime-main.b57d7c2a.js.map",
+    "static/css/2.8d682a32.chunk.css": "/CS426Team31/crimemapping/static/css/2.8d682a32.chunk.css",
+    "static/js/2.640b86eb.chunk.js": "/CS426Team31/crimemapping/static/js/2.640b86eb.chunk.js",
+    "static/js/2.640b86eb.chunk.js.map": "/CS426Team31/crimemapping/static/js/2.640b86eb.chunk.js.map",
+    "static/js/3.cf483791.chunk.js": "/CS426Team31/crimemapping/static/js/3.cf483791.chunk.js",
+    "static/js/3.cf483791.chunk.js.map": "/CS426Team31/crimemapping/static/js/3.cf483791.chunk.js.map",
+    "index.html": "/CS426Team31/crimemapping/index.html",
+    "static/css/2.8d682a32.chunk.css.map": "/CS426Team31/crimemapping/static/css/2.8d682a32.chunk.css.map",
+    "static/css/main.586feceb.chunk.css.map": "/CS426Team31/crimemapping/static/css/main.586feceb.chunk.css.map",
+    "static/js/2.640b86eb.chunk.js.LICENSE.txt": "/CS426Team31/crimemapping/static/js/2.640b86eb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b57d7c2a.js",
+    "static/css/2.8d682a32.chunk.css",
+    "static/js/2.640b86eb.chunk.js",
+    "static/css/main.586feceb.chunk.css",
+    "static/js/main.1e4fe17c.chunk.js"
+  ]
+}
