@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/crimemapping/static/css/main.586feceb.chunk.css",
-    "main.js": "/crimemapping/static/js/main.1e4fe17c.chunk.js",
-    "main.js.map": "/crimemapping/static/js/main.1e4fe17c.chunk.js.map",
-    "runtime-main.js": "/crimemapping/static/js/runtime-main.c239a3a2.js",
-    "runtime-main.js.map": "/crimemapping/static/js/runtime-main.c239a3a2.js.map",
-    "static/css/2.8d682a32.chunk.css": "/crimemapping/static/css/2.8d682a32.chunk.css",
-    "static/js/2.5be7c47c.chunk.js": "/crimemapping/static/js/2.5be7c47c.chunk.js",
-    "static/js/2.5be7c47c.chunk.js.map": "/crimemapping/static/js/2.5be7c47c.chunk.js.map",
-    "static/js/3.cf483791.chunk.js": "/crimemapping/static/js/3.cf483791.chunk.js",
-    "static/js/3.cf483791.chunk.js.map": "/crimemapping/static/js/3.cf483791.chunk.js.map",
+    "main.css": "/crimemapping/static/css/main.ce1a5354.chunk.css",
+    "main.js": "/crimemapping/static/js/main.f11dd1ad.chunk.js",
+    "main.js.map": "/crimemapping/static/js/main.f11dd1ad.chunk.js.map",
+    "runtime-main.js": "/crimemapping/static/js/runtime-main.deb2b298.js",
+    "runtime-main.js.map": "/crimemapping/static/js/runtime-main.deb2b298.js.map",
+    "static/css/2.812838b0.chunk.css": "/crimemapping/static/css/2.812838b0.chunk.css",
+    "static/js/2.fcdbd46f.chunk.js": "/crimemapping/static/js/2.fcdbd46f.chunk.js",
+    "static/js/2.fcdbd46f.chunk.js.map": "/crimemapping/static/js/2.fcdbd46f.chunk.js.map",
+    "static/js/3.58931949.chunk.js": "/crimemapping/static/js/3.58931949.chunk.js",
+    "static/js/3.58931949.chunk.js.map": "/crimemapping/static/js/3.58931949.chunk.js.map",
     "index.html": "/crimemapping/index.html",
-    "static/css/2.8d682a32.chunk.css.map": "/crimemapping/static/css/2.8d682a32.chunk.css.map",
-    "static/css/main.586feceb.chunk.css.map": "/crimemapping/static/css/main.586feceb.chunk.css.map",
-    "static/js/2.5be7c47c.chunk.js.LICENSE.txt": "/crimemapping/static/js/2.5be7c47c.chunk.js.LICENSE.txt"
+    "static/css/2.812838b0.chunk.css.map": "/crimemapping/static/css/2.812838b0.chunk.css.map",
+    "static/css/main.ce1a5354.chunk.css.map": "/crimemapping/static/css/main.ce1a5354.chunk.css.map",
+    "static/js/2.fcdbd46f.chunk.js.LICENSE.txt": "/crimemapping/static/js/2.fcdbd46f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c239a3a2.js",
-    "static/css/2.8d682a32.chunk.css",
-    "static/js/2.5be7c47c.chunk.js",
-    "static/css/main.586feceb.chunk.css",
-    "static/js/main.1e4fe17c.chunk.js"
+    "static/js/runtime-main.deb2b298.js",
+    "static/css/2.812838b0.chunk.css",
+    "static/js/2.fcdbd46f.chunk.js",
+    "static/css/main.ce1a5354.chunk.css",
+    "static/js/main.f11dd1ad.chunk.js"
   ]
 }
