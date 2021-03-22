@@ -2,11 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Multiselect } from "multiselect-react-dropdown";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "react-dates/lib/css/_datepicker.css";
-// import "react-dates/initialize";
-// import { DateRangePicker } from "react-dates";
-// import "react-dates/lib/css/_datepicker.css";
+import DatePicker from "./DatePicker";
 
 const SidebarLink = styled(Link)`
   display: flex;
@@ -17,8 +13,7 @@ const SidebarLink = styled(Link)`
   list-style: none;
   height: 60px;
   text-decoration: none;
-  font-size: 18px;
-
+  font-size: 20px;
   &:hover {
     background: #252831;
     border-left: 4px solid #632ce4;
@@ -90,6 +85,7 @@ const SubMenu = ({ item }) => {
           <SidebarLabel>{item.title2}</SidebarLabel>
         </div>
       </SidebarLink>
+      <DatePicker />
     </>
   );
 };
