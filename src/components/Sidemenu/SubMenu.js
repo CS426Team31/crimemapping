@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Multiselect } from "multiselect-react-dropdown";
 import DatePicker from "./DatePicker";
+import Filters from "./Filters";
 
 const SidebarLink = styled(Link)`
   display: flex;
@@ -46,23 +46,6 @@ const SubMenu = ({ item }) => {
 
   const showSubnav = () => setSubnav(!subnav);
 
-  const data = [
-    { crimeType: "Arson", value: "arson" },
-    { crimeType: "Assault", value: "assault" },
-    { crimeType: "Burglary", value: "burglary" },
-    { crimeType: "Drug Violation", value: "drug_violation" },
-    { crimeType: "DUI", value: "dui" },
-    { crimeType: "Homicide", value: "homicide" },
-    { crimeType: "Robbery", value: "Robbery" },
-    { crimeType: "Sex Crimes", value: "sex_crimes" },
-    { crimeType: "Shoplifting", value: "shoplifting" },
-    { crimeType: "Theft", value: "theft" },
-    { crimeType: "Traffic Incident", value: "traffic_incident" },
-    { crimeType: "Vandalism", value: "vandalism" },
-    { crimeType: "Weapons", value: "weapons" },
-  ];
-  const [options] = useState(data);
-
   return (
     <>
       <SidebarLink to={item} onClick={item.subNav && showSubnav}>
@@ -71,14 +54,7 @@ const SubMenu = ({ item }) => {
           <SidebarLabel>{item.title1}</SidebarLabel>
         </div>
       </SidebarLink>
-      <Multiselect
-        options={options}
-        closeOnSelect={false}
-        displayValue="crimeType"
-        showCheckbox={false}
-        closeIcon="close"
-        avoidHighlightFirstOption={true}
-      />
+      <Filters />
       <SidebarLink to={item} onClick={item.subNav && showSubnav}>
         <div>
           {item.icon2}

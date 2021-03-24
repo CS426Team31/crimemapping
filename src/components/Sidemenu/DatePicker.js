@@ -26,7 +26,8 @@ class DatePicker extends Component {
           focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
           onFocusChange={(focusedInput) => this.setState({ focusedInput })} // PropTypes.func.isRequired,
           orientation="vertical"
-          verticalHeight={568}
+          verticalHeight={350}
+          block
         />
       </div>
     );
