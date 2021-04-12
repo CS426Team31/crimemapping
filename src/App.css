@@ -45,3 +45,7 @@ code {
   font-size: 30px;
   margin-left: 5rem;
 }
+
+.about {
+  flex-direction: row | row-reverse | column | column-reverse;
+}
