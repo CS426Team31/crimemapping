@@ -79,8 +79,8 @@ const App = () => {
               onLoad={onMapload}
             ></GoogleMap>
           </Route>
-          <Route exact path="/crimemapping" component={App} />
-          <Route exact path="/" component={App} />
+          {/* <Route exact path="/crimemapping" component={App} />
+          <Route exact path="/" component={App} /> */}
           <Route exact path="/About" component={About} />
           <Route exact path="/Charts" component={Charts} />
           <Route exact path="/Data" component={DataList} />
