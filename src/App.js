@@ -1,16 +1,16 @@
-import React from "react";
-//import Header from './components/Header'
+import React, { useState } from "react";
 import Search from "./components/Search";
-//import Sidebar from './components/Sidemenu/Sidebar'
-//import Filter from './components/Filter'
-//import { Button } from "./components/layout/Button";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import About from "./components/Pages/About";
+import Charts from "./components/Pages/charts.component";
+import DataList from "./components/Pages/data-list.component";
+
 import {
   GoogleMap,
   useLoadScript,
-  //  Marker,
+  Marker,
   // InfoWindow,
 } from "@react-google-maps/api"; //imported the map
 
@@ -53,24 +53,60 @@ const App = () => {
     mapRef.current.setZoom(13);
   }, []);
 
+  // const [markers, setMarkers] = React.useState([]);
+
   if (loadError) return "Error loading maps";
   if (!isLoaded) return "Loading Maps";
 
+  //////////////////////////////// firebase ///////////////////////////////////
+  // const [crimes, setCrimes] = useState([]);
+
+  //const ref = firebase.firestore().collection("seniorproject-bed13-default-rtdb");
+  //console.log(ref)
+
   return (
-    <div>
-      <Router>
+    <Router>
+      <div>
         <Navbar />
-        <Search panTo={panTo} />
-        <GoogleMap
-          mapContainerStyle={mapContainerStyle}
-          zoom={13}
-          center={center}
-          options={options}
-          onLoad={onMapload}
-        />
-      </Router>
-    </div>
+        <Switch>
+          <Route exact path="/">
+            <Search panTo={panTo} />
+            <GoogleMap
+              mapContainerStyle={mapContainerStyle}
+              zoom={13}
+              center={center}
+              options={options}
+              onLoad={onMapload}
+            ></GoogleMap>
+          </Route>
+
+          <Route exact path="/About" component={About} />
+          <Route exact path="/Charts" component={Charts} />
+          <Route exact path="/Data" component={DataList} />
+        </Switch>
+      </div>
+    </Router>
   );
 };
 
 export default App;
+
+{
+  /**   this goes on within  the first googlemaps tag but took it out for now
+             onClick={(event) => {
+                setMarkers(current => [...current, {
+                  lat:39.529633,
+                  lng: -119.813805,
+                  id: 1,
+                }])
+              }}   
+            */
+}
+{
+  /**    {markers.map((marker) => (
+              <Marker 
+                key={marker.id}
+                position={{ lat: marker.lat, lng: marker.lng }} 
+              />
+            ))} */
+}

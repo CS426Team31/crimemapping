@@ -15,7 +15,6 @@ import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
 // Step 6 - Adding the chart and theme as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, Column2D, FusionTheme);
 
-
 let chartData = [];
 let dateData = [];
 let datas = [];
@@ -35,11 +34,11 @@ const chartConfigs = {
       //Set the y-axis name
       yAxisName: "Crime",
       //Set the theme for your chart
-      theme: "fusion"
+      theme: "fusion",
     },
     // Chart Data
-    data: chartData
-  }
+    data: chartData,
+  },
 };
 
 const dateConfigs = {
@@ -57,15 +56,14 @@ const dateConfigs = {
       //Set the y-axis name
       yAxisName: "Rate",
       //Set the theme for your chart
-      theme: "fusion"
+      theme: "fusion",
     },
     // Chart Data
-    data: dateData
-  }
+    data: dateData,
+  },
 };
 
 export default class Charts extends Component {
-
   constructor(props) {
     super(props);
     this.refreshList = this.refreshList.bind(this);
@@ -75,7 +73,7 @@ export default class Charts extends Component {
     this.state = {
       datas: [],
       chartData: [],
-      dateData: []
+      dateData: [],
     };
   }
 
@@ -90,8 +88,6 @@ export default class Charts extends Component {
         clearInterval(refreshId);
       }
     }, 40);
-
-
   }
 
   componentWillUnmount() {
@@ -99,7 +95,6 @@ export default class Charts extends Component {
   }
 
   onDataChange(snapshot) {
-
     const todos = snapshot.val();
 
     datas.push({
@@ -113,13 +108,16 @@ export default class Charts extends Component {
       LONG: todos.LONG,
       Type: todos.Type,
       Type_Description: todos.Type_Description,
-      WARD: todos.WARD
+      WARD: todos.WARD,
     });
 
     if (chartData.length < 1) {
       chartData.push({ label: todos.Type_Description, value: 1 });
-    } else if (chartData.filter(data => data.label === todos.Type_Description).length > 0) {
-      chartData.filter(data => {
+    } else if (
+      chartData.filter((data) => data.label === todos.Type_Description).length >
+      0
+    ) {
+      chartData.filter((data) => {
         if (data.label === todos.Type_Description) {
           data.value = data.value + 1;
         }
@@ -133,8 +131,10 @@ export default class Charts extends Component {
 
     if (dateData.length < 1) {
       dateData.push({ label: actualDate, value: 1 });
-    } else if (dateData.filter(data => data.label === actualDate).length > 0) {
-      dateData.filter(data => {
+    } else if (
+      dateData.filter((data) => data.label === actualDate).length > 0
+    ) {
+      dateData.filter((data) => {
         if (data.label === actualDate) {
           data.value = data.value + 1;
         }
@@ -148,7 +148,7 @@ export default class Charts extends Component {
     this.setState({
       datas: datas,
       chartData: chartData,
-      dateData: dateData
+      dateData: dateData,
     });
   }
 
@@ -171,11 +171,13 @@ export default class Charts extends Component {
 
     let content;
     if (datas.length > 99) {
-      content = <div className="container text-denter">
-        <ReactFC {...chartConfigs} />
-        <hr />
-        <ReactFC {...dateConfigs} />
-      </div>;
+      content = (
+        <div className="container text-denter">
+          <ReactFC {...chartConfigs} />
+          <hr />
+          <ReactFC {...dateConfigs} />
+        </div>
+      );
     } else {
       content = <span>Loading map...</span>;
     }
@@ -183,9 +185,7 @@ export default class Charts extends Component {
     return (
       <div className="row">
         <div className="col-md-12">
-          <div className="datamap">
-            {content}
-          </div>
+          <div className="datamap">{content}</div>
         </div>
       </div>
     );
