@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./components/Search";
 import "./App.css";
 import Navbar from "./components/Navbar";
@@ -6,12 +6,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./components/Pages/About";
 import Charts from "./components/Pages/charts.component";
 import DataList from "./components/Pages/data-list.component";
+import firebase from "./firebase";
 
 import {
   GoogleMap,
   useLoadScript,
   Marker,
-  // InfoWindow,
+  InfoWindow,
 } from "@react-google-maps/api"; //imported the map
 
 const libraries = ["places"];
@@ -34,6 +35,9 @@ const options = {
   zoomControl: true,
 };
 
+//Firebase gets called here and passes the whole dataset
+const db = firebase.ref();
+
 // This is the main application function
 const App = () => {
   //This loads the google API key
@@ -53,16 +57,53 @@ const App = () => {
     mapRef.current.setZoom(13);
   }, []);
 
-  // const [markers, setMarkers] = React.useState([]);
+  const [markers, setMarkers] = useState([]);
 
+  const [records, setRecords] = useState([]);
+
+  // console.log(records)
+
+  useEffect(() => {
+    db.on("value", (snapshot) => {
+      const data = snapshot.val();
+      setRecords(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (records && records.length) {
+      console.log(records[10].LAT);
+
+      for (var i = 0; i < 100; i++) {
+        // console.log(records[i].LAT)
+        setMarkers((current) => [
+          ...current,
+          {
+            lat: records[i].LAT,
+            lng: records[i].LONG,
+            crime: records[i].Type_Description,
+          },
+        ]);
+        //console.log(markers[i].value)
+      }
+    }
+  }, []);
+
+  console.log(markers);
+
+  {
+    /**   this goes on within  the first googlemaps tag but took it out for now
+             onClick={(event) => {
+                setMarkers(current => [...current, {
+                  lat:39.529633,
+                  lng: -119.813805,
+                  id: 1,
+                }])
+              }}   
+            */
+  }
   if (loadError) return "Error loading maps";
   if (!isLoaded) return "Loading Maps";
-
-  //////////////////////////////// firebase ///////////////////////////////////
-  // const [crimes, setCrimes] = useState([]);
-
-  //const ref = firebase.firestore().collection("seniorproject-bed13-default-rtdb");
-  //console.log(ref)
 
   return (
     <Router>
@@ -77,10 +118,16 @@ const App = () => {
               center={center}
               options={options}
               onLoad={onMapload}
-            ></GoogleMap>
+            >
+              {/*}         {markers.map((marker) => (
+              <Marker 
+                key={marker.value}
+                position={{ lat: marker.lat, lng: marker.lng }} 
+              />
+     ))}   */}
+            </GoogleMap>
           </Route>
-          {/* <Route exact path="/crimemapping" component={App} />
-          <Route exact path="/" component={App} /> */}
+
           <Route exact path="/About" component={About} />
           <Route exact path="/Charts" component={Charts} />
           <Route exact path="/Data" component={DataList} />
@@ -91,23 +138,3 @@ const App = () => {
 };
 
 export default App;
-
-{
-  /**   this goes on within  the first googlemaps tag but took it out for now
-             onClick={(event) => {
-                setMarkers(current => [...current, {
-                  lat:39.529633,
-                  lng: -119.813805,
-                  id: 1,
-                }])
-              }}   
-            */
-}
-{
-  /**    {markers.map((marker) => (
-              <Marker 
-                key={marker.id}
-                position={{ lat: marker.lat, lng: marker.lng }} 
-              />
-            ))} */
-}

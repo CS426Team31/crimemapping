@@ -28,6 +28,8 @@ class DatePicker extends Component {
           orientation="vertical"
           verticalHeight={350}
           block
+          enableOutsideDays
+          isOutsideRange={() => false}
         />
       </div>
     );
