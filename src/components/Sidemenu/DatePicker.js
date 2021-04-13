@@ -26,10 +26,11 @@ class DatePicker extends Component {
           focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
           onFocusChange={(focusedInput) => this.setState({ focusedInput })} // PropTypes.func.isRequired,
           orientation="vertical"
-          verticalHeight={350}
+          verticalHeight={450}
           block
-          enableOutsideDays
           isOutsideRange={() => false}
+          daySize={60}
+          showClearDates
         />
       </div>
     );
