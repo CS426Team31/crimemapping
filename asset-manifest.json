@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/crimemapping/static/css/main.9dcd8c51.chunk.css",
-    "main.js": "/crimemapping/static/js/main.932a4a6e.chunk.js",
-    "main.js.map": "/crimemapping/static/js/main.932a4a6e.chunk.js.map",
-    "runtime-main.js": "/crimemapping/static/js/runtime-main.aac679dc.js",
-    "runtime-main.js.map": "/crimemapping/static/js/runtime-main.aac679dc.js.map",
+    "main.css": "/crimemapping/static/css/main.a4972288.chunk.css",
+    "main.js": "/crimemapping/static/js/main.3d93576a.chunk.js",
+    "main.js.map": "/crimemapping/static/js/main.3d93576a.chunk.js.map",
+    "runtime-main.js": "/crimemapping/static/js/runtime-main.7a4687da.js",
+    "runtime-main.js.map": "/crimemapping/static/js/runtime-main.7a4687da.js.map",
     "static/css/2.812838b0.chunk.css": "/crimemapping/static/css/2.812838b0.chunk.css",
-    "static/js/2.61595ae6.chunk.js": "/crimemapping/static/js/2.61595ae6.chunk.js",
-    "static/js/2.61595ae6.chunk.js.map": "/crimemapping/static/js/2.61595ae6.chunk.js.map",
-    "static/js/3.8365bddc.chunk.js": "/crimemapping/static/js/3.8365bddc.chunk.js",
-    "static/js/3.8365bddc.chunk.js.map": "/crimemapping/static/js/3.8365bddc.chunk.js.map",
+    "static/js/2.d20c285e.chunk.js": "/crimemapping/static/js/2.d20c285e.chunk.js",
+    "static/js/2.d20c285e.chunk.js.map": "/crimemapping/static/js/2.d20c285e.chunk.js.map",
+    "static/js/3.084e6eb2.chunk.js": "/crimemapping/static/js/3.084e6eb2.chunk.js",
+    "static/js/3.084e6eb2.chunk.js.map": "/crimemapping/static/js/3.084e6eb2.chunk.js.map",
     "index.html": "/crimemapping/index.html",
     "static/css/2.812838b0.chunk.css.map": "/crimemapping/static/css/2.812838b0.chunk.css.map",
-    "static/css/main.9dcd8c51.chunk.css.map": "/crimemapping/static/css/main.9dcd8c51.chunk.css.map",
-    "static/js/2.61595ae6.chunk.js.LICENSE.txt": "/crimemapping/static/js/2.61595ae6.chunk.js.LICENSE.txt"
+    "static/css/main.a4972288.chunk.css.map": "/crimemapping/static/css/main.a4972288.chunk.css.map",
+    "static/js/2.d20c285e.chunk.js.LICENSE.txt": "/crimemapping/static/js/2.d20c285e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.aac679dc.js",
+    "static/js/runtime-main.7a4687da.js",
     "static/css/2.812838b0.chunk.css",
-    "static/js/2.61595ae6.chunk.js",
-    "static/css/main.9dcd8c51.chunk.css",
-    "static/js/main.932a4a6e.chunk.js"
+    "static/js/2.d20c285e.chunk.js",
+    "static/css/main.a4972288.chunk.css",
+    "static/js/main.3d93576a.chunk.js"
   ]
 }
