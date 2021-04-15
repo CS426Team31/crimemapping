@@ -72,24 +72,22 @@ const App = () => {
 
   useEffect(() => {
     if (records && records.length) {
-      console.log(records[10].LAT);
+      for (var i = 0; i < 10; i++) {
+        var lat = [];
+        var long = [];
+        var type = [];
 
-      for (var i = 0; i < 100; i++) {
-        // console.log(records[i].LAT)
-        setMarkers((current) => [
-          ...current,
-          {
-            lat: records[i].LAT,
-            lng: records[i].LONG,
-            crime: records[i].Type_Description,
-          },
-        ]);
-        //console.log(markers[i].value)
+        lat.push([records[i].LAT]);
+        long.push(records[i].LONG);
+        type.push(records[i].Type_Description);
+
+        // console.log(lat[0]);
+        // console.log(long[0]);
+        // console.log(lat);
+        // console.log(long);
       }
     }
-  }, []);
-
-  console.log(markers);
+  });
 
   {
     /**   this goes on within  the first googlemaps tag but took it out for now

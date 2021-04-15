@@ -31,6 +31,8 @@ class DatePicker extends Component {
           isOutsideRange={() => false}
           daySize={60}
           showClearDates
+          minimumNights={0}
+          reopenPickerOnClearDates
         />
       </div>
     );
