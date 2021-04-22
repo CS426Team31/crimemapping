@@ -1177,7 +1177,7 @@ useEffect(() => {
                     clickable={true}
                     onCloseClick={() => setSelected({})}
                     >
-                      <p>{selected.Type_Description }{selected.General_Location}</p>
+                      <p>{selected.Crime }{selected.General_Location}</p>
                       
                     </InfoWindow>
                   )} 
