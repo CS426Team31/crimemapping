@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../../App.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
-import { IoGrid } from "react-icons/io5";
+// import { IoGrid } from "react-icons/io5";
 
 const About = () => {
   return (
@@ -16,7 +16,7 @@ const About = () => {
           }}
         >
           <Col>
-            <h1></h1>
+            
           </Col>
         </Row>
         <Row>

@@ -25,10 +25,10 @@ const mapContainerStyle = {
   height: "91vh",
 };
 
-//where to center at the start of the program (these coordinates set it on Reno)
+//where to center at the start of the program (these coordinates set it on Las Vegas)
 const center = {
-  lat: 39.529633,
-  lng: -119.813805,
+  lat: 36.114647,
+  lng: -115.172813,
 };
 
 //Deafault stuff
@@ -38,7 +38,7 @@ const options={
 };
 
 
-//Firebase gets called here and passes the whole dataset
+// Firebase gets called here and passes the whole dataset
 const db = firebase.ref().limitToFirst(200);
 
 
@@ -63,7 +63,7 @@ const App = () =>{
 
  const [markers, setMarkers] =useState([]); 
 
- const [records,setRecords]=useState([]);
+ // const [records,setRecords]=useState([]);
 
  // console.log(records)
 
@@ -87,6 +87,23 @@ useEffect(() => {
   if (loadError) return "Error loading maps";
   if (!isLoaded) return "Loading Maps";
 
+
+   if (markers.Type_Description === " BURGLARY") {
+      markers.icon =  "http://maps.google.com/mapfiles/ms/icons/blue-dot.png" 
+   }
+
+   if (markers.Type_Description === " AUTO BURGLARY") {
+      markers.icon =  "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png" 
+   }
+
+   if (markers.Type_Description === " OTHER DISTURBANCE") {
+      markers.icon =  "http://maps.google.com/mapfiles/ms/icons/pink-dot.png" 
+   }
+
+   if (markers.Type_Description === " ASSAULT/BATTERY") {
+      markers.icon =  "http://maps.google.com/mapfiles/ms/icons/purple-dot.png"          
+   }
+
   return( 
    <Router>  
      <div>
@@ -105,9 +122,14 @@ useEffect(() => {
                 >
                   {markers.map(marker => {
                     return(
-                      <Marker key={marker.ObjectId} 
-                      position={{lat:parseFloat(marker.LAT), lng:parseFloat(marker.LONG)}}
-                      onClick={() => onSelect(marker)}
+                      <Marker 
+
+                        icon = {"http://maps.google.com/mapfiles/ms/icons/purple-dot.png"}
+                        
+
+                        key={marker.ObjectId} 
+                        position={{lat:parseFloat(marker.LAT), lng:parseFloat(marker.LONG)}}
+                        onClick={() => onSelect(marker)}
                       />
                     )
                   })}
