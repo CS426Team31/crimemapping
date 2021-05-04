@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import firebase from "../firebase";
 
-import { MapContainer, Marker, TileLayer, Popup } from 'react-leaflet'
+import { MapContainer, Marker, TileLayer, Popup } from "react-leaflet";
 
 const datas = [];
 const markers = [];
 
 export default class MapData extends Component {
-
   constructor(props) {
     super(props);
     this.refreshList = this.refreshList.bind(this);
@@ -33,8 +32,6 @@ export default class MapData extends Component {
         clearInterval(refreshId);
       }
     }, 40);
-
-
   }
 
   componentWillUnmount() {
@@ -42,7 +39,6 @@ export default class MapData extends Component {
   }
 
   onDataChange(snapshot) {
-
     const todos = snapshot.val();
 
     datas.push({
@@ -60,14 +56,14 @@ export default class MapData extends Component {
       ObjectId: todos.ObjectId,
       Type: todos.Type,
       Type_Description: todos.Type_Description,
-      WARD: todos.WARD
+      WARD: todos.WARD,
     });
 
     markers.push([todos.LAT, todos.LONG]);
 
     this.setState({
       datas: datas,
-      markers: markers
+      markers: markers,
     });
   }
 
@@ -86,37 +82,37 @@ export default class MapData extends Component {
   }
 
   render() {
-    const { datas, markers} = this.state;
+    const { datas, markers } = this.state;
 
     let content;
     if (markers.length > 99) {
-      content = <div id="mapid">
-        <MapContainer
-          center={markers[90]}
-          zoom={12}
-          scrollWheelZoom={false}
-        >
-          <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-          />
-          {markers.map((position, idx) =>
-            <Marker key={`marker-${idx}`} position={position}>
-              <Popup>
-                <div>
-                  <p>{datas[idx].Event_Date} </p>
-                  <p>{datas[idx].General_Location}</p>
-                  <hr />
-                  <p><strong>{datas[idx].Type_Description}</strong> </p>
-                  <p><em>{datas[idx].Event_Number}</em></p>
-
-                </div>
-
-              </Popup>
-            </Marker>
-          )}
-        </MapContainer>
-      </div>;
+      content = (
+        <div id="mapid">
+          <MapContainer center={markers[90]} zoom={12} scrollWheelZoom={false}>
+            <TileLayer
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+            />
+            {markers.map((position, idx) => (
+              <Marker key={`marker-${idx}`} position={position}>
+                <Popup>
+                  <div>
+                    <p>{datas[idx].Event_Date} </p>
+                    <p>{datas[idx].General_Location}</p>
+                    <hr />
+                    <p>
+                      <strong>{datas[idx].Type_Description}</strong>{" "}
+                    </p>
+                    <p>
+                      <em>{datas[idx].Event_Number}</em>
+                    </p>
+                  </div>
+                </Popup>
+              </Marker>
+            ))}
+          </MapContainer>
+        </div>
+      );
     } else {
       content = <span>Loading map...</span>;
     }
@@ -124,10 +120,10 @@ export default class MapData extends Component {
     return (
       <div className="row">
         <div className="col-md-12">
-          <div className="datamap">
-            {content}
-          </div>
-          <p><em>Click on marker to view more data</em></p>
+          <div className="datamap">{content}</div>
+          <p>
+            <em>Click on marker to view more data</em>
+          </p>
         </div>
       </div>
     );

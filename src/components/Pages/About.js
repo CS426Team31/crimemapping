@@ -5,27 +5,26 @@ import Col from "react-bootstrap/Col";
 import "../../App.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import { IoGrid } from "react-icons/io5";
+import { FaCentercode } from "react-icons/fa";
 
+//constructing an about page here
 const About = () => {
   return (
     <div>
       <Container>
-        <Row
-          style={{
-            margin: "50px",
-          }}
-        >
-          <Col>
-            <h1></h1>
-          </Col>
-        </Row>
         <Row>
           <Col
             style={{
-              margin: "50px",
+              margin: "80px",
             }}
           >
-            <h2>Team 31</h2>
+            <h2
+              style={{
+                marginBottom: "40px",
+              }}
+            >
+              Team 31
+            </h2>
             <ul>Befiker Beksisa</ul>
             <ul>Ivan Samuel</ul>
             <ul>Steven Hernandez</ul>
@@ -33,21 +32,31 @@ const About = () => {
           </Col>
           <Col
             style={{
-              margin: "50px",
+              margin: "80px",
             }}
           >
-            <h2>Instructors & Advisor</h2>
+            <h2
+              style={{
+                marginBottom: "40px",
+              }}
+            >
+              Instructors & Advisor
+            </h2>
             <ul>Dr. David Feil-Seifer</ul>
             <ul>Dr. Devrin Lee</ul>
             <ul>Dr. Lei Yang</ul>
           </Col>
           <Col
             style={{
-              margin: "50px",
+              margin: "80px",
             }}
           >
             <h2>Project Desciption</h2>
-            <p>
+            <p
+              style={{
+                margin: "40px",
+              }}
+            >
               Avoiding areas that may have a higher possibility of a crime is
               one of the many concerns a person has when going to a new place.
               While word of mouth of what areas to avoid or actions not to do
