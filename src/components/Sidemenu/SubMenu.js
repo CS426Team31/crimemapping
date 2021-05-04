@@ -25,7 +25,7 @@ const SidebarLabel = styled.span`
   margin-left: 16px;
 `;
 
-//a function to show and hide the
+//a function to show and hide the the sidebar by click the button at upper left conrner
 const SubMenu = ({ item }) => {
   const [subnav, setSubnav] = useState(false);
 
@@ -33,12 +33,14 @@ const SubMenu = ({ item }) => {
 
   return (
     <>
+      //display the titles and icons for filter and datapicker
       <SidebarLink to={item} onClick={item.subNav && showSubnav}>
         <div>
           {item.icon1}
           <SidebarLabel>{item.title1}</SidebarLabel>
         </div>
       </SidebarLink>
+      //add the Filters from Filters.js
       <Filters />
       <SidebarLink to={item} onClick={item.subNav && showSubnav}>
         <div>
@@ -46,6 +48,7 @@ const SubMenu = ({ item }) => {
           <SidebarLabel>{item.title2}</SidebarLabel>
         </div>
       </SidebarLink>
+      //add the datepicker from DatePicker.js
       <DatePicker />
     </>
   );

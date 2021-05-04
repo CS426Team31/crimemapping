@@ -1,8 +1,10 @@
+//import component from react and Airbnb datapicker API
 import React, { Component } from "react";
 import "react-dates/lib/css/_datepicker.css";
 import "react-dates/initialize";
 import { DateRangePicker } from "react-dates";
 
+//initiate a class component called DatePicker that has props(properties)of startDate and endDate
 class DatePicker extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +14,7 @@ class DatePicker extends Component {
     };
   }
 
+  //render and return the DateRangePicker
   render() {
     return (
       <div>
@@ -25,12 +28,18 @@ class DatePicker extends Component {
           } // PropTypes.func.isRequired,
           focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
           onFocusChange={(focusedInput) => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+          //add options
+
+          //change the orientation of datepicker to veritcal
           orientation="vertical"
+          //adjust the heigh
           verticalHeight={450}
           block
+          //allow user to pick past days
           isOutsideRange={() => false}
           daySize={60}
           showClearDates
+          //allow user to pick just one day instead of a date range
           minimumNights={0}
           reopenPickerOnClearDates
         />
@@ -38,5 +47,5 @@ class DatePicker extends Component {
     );
   }
 }
-
+//export as DatePicker to SubMenu.js
 export default DatePicker;
