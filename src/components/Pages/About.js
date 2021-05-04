@@ -1,10 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../../App.css";
-// import "bootstrap/dist/css/bootstrap.min.css";
-import { IoGrid } from "react-icons/io5";
 
 const About = () => {
   return (
@@ -36,6 +34,7 @@ const About = () => {
               margin: "50px",
             }}
           >
+            <h2>a CS426 Senior Project in Computer Science, Spring 2021, at UNR, CSE Department</h2>
             <h2>Instructors & Advisor</h2>
             <ul>Dr. David Feil-Seifer</ul>
             <ul>Dr. Devrin Lee</ul>
