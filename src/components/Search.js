@@ -1,4 +1,4 @@
-//import { formatRelative } from "date-fns";   //this is used to format a date
+//Dependancies needed for the Search component
 import usePlacesAutocomplete, {
     getGeocode,
     getLatLng,
@@ -12,9 +12,11 @@ import {
   } from "@reach/combobox"
   import "@reach/combobox/styles.css"
 
-
-  
+//The component is started off as a hook function which is a new method to 
+//declare a function, the panTo variable is passed in from the App.js file.  
 const Search = ({panTo}) => {
+    
+  //These are variables that will be used later on in the component.
     const {
       ready, 
       value, 
@@ -22,14 +24,17 @@ const Search = ({panTo}) => {
       setValue, 
       clearSuggestions,
     } = usePlacesAutocomplete({
+
       requestoptions:{
-        loacation: { lat: () => 39.529633, lng: () => -119.813805 },
+        location: { lat: () => 39.529633, lng: () => -119.813805 },
         radius: 100*1000,
       },
     });
   
   
     return( 
+      //the className 'search' can be found in the app.css file in order to change the 
+      //position and shape of the search box
       <div className="search">
       <Combobox 
          onSelect={async (address) => {
