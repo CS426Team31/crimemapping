@@ -18,6 +18,7 @@ const About = () => {
               margin: "80px",
             }}
           >
+            //list of team members
             <h2
               style={{
                 marginBottom: "40px",
@@ -35,6 +36,7 @@ const About = () => {
               margin: "80px",
             }}
           >
+            //list of instructors and advisor
             <h2
               style={{
                 marginBottom: "80px",
@@ -51,6 +53,7 @@ const About = () => {
               margin: "80px",
             }}
           >
+            //a brief project description
             <h2>Project Desciption</h2>
             <p
               style={{
