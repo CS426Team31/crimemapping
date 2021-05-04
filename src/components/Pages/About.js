@@ -37,7 +37,7 @@ const About = () => {
           >
             <h2
               style={{
-                marginBottom: "40px",
+                marginBottom: "80px",
               }}
             >
               Instructors & Advisor
@@ -54,7 +54,7 @@ const About = () => {
             <h2>Project Desciption</h2>
             <p
               style={{
-                margin: "40px",
+                margin: "80px",
               }}
             >
               Avoiding areas that may have a higher possibility of a crime is
