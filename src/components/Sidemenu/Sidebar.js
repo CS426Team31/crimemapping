@@ -6,16 +6,10 @@ import { SidebarData } from "./SidebarData";
 import SubMenu from "./SubMenu";
 import { IconContext } from "react-icons/lib";
 
-/*
-const Nav = styled.div`
-  background: #15171c;
-  height: 80px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-`;
-*/
 
+//These variables are a mix of css and javascript that act like a component 
+//and are called within the render/return part of a function. They will 
+//wrap the variables and components within it with the styles it has.
 const NavIcon = styled(Link)`
   margin-left: 2rem;
   font-size: 2rem;
@@ -28,7 +22,7 @@ const NavIcon = styled(Link)`
 const SidebarNav = styled.nav`
   background: #15171c;
   opacity: 0.9;
-  width: 450px;
+  width: 350px;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -56,18 +50,25 @@ const SidebarWrap = styled.div`
 `;
 
 const Sidebar = () => {
+  //A boolean variable which is used to show or hide the sidebar component
   const [sidebar, setSidebar] = useState(false);
 
+  //A hook that uses the 'sidebar' variable to either show or hide the 
+  //sidebar component depending on the value it has.
   const showSidebar = () => setSidebar(!sidebar);
 
   return (
     <>
+    {/**This next line of code assigns a color to the button that
+     * open and closes the sidebar
+     */}
       <IconContext.Provider value={{ color: "#0096FA" }}>
-        {/*   <Nav>  */}
         <NavIcon to="#">
           <FaIcons.FaBars onClick={showSidebar} />
         </NavIcon>
-        {/*   </Nav>   */}
+        {/** The SidebarNav and SidebarWrap which were declared above are called 
+         * to wrap the SubMenu component.
+        */}
         <SidebarNav sidebar={sidebar}>
           <SidebarWrap>
             <NavIcon to="#">
@@ -76,7 +77,7 @@ const Sidebar = () => {
             {SidebarData.map((item, index) => {
               return <SubMenu item={item} key={index} />;
             })}
-            <Button type="submit">Apply</Button>
+          {/*  <Button type="submit">Apply</Button> */}
           </SidebarWrap>
         </SidebarNav>
       </IconContext.Provider>
