@@ -33,14 +33,14 @@ const SubMenu = ({ item }) => {
 
   return (
     <>
-      //display the titles and icons for filter and datapicker
+      {/* //display the titles and icons for filter and datapicker */}
       <SidebarLink to={item} onClick={item.subNav && showSubnav}>
         <div>
           {item.icon1}
           <SidebarLabel>{item.title1}</SidebarLabel>
         </div>
       </SidebarLink>
-      //add the Filters from Filters.js
+      {/* //add the Filters from Filters.js */}
       <Filters />
       <SidebarLink to={item} onClick={item.subNav && showSubnav}>
         <div>
@@ -48,7 +48,7 @@ const SubMenu = ({ item }) => {
           <SidebarLabel>{item.title2}</SidebarLabel>
         </div>
       </SidebarLink>
-      //add the datepicker from DatePicker.js
+      {/* //add the datepicker from DatePicker.js */}
       <DatePicker />
     </>
   );
